@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Raleway:wght@500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+
+  // overflow: hidden;
+ 
+}
+
+:root{
+  
+  /* --------------- colors ------------*/
+
+  --grey-1 : #101010;
+  --grey-2 : #292929;
+  --grey-3 : #BBB7B7;
+  --grey-4 : #171717;
+  --white :  #ffffff;
+}
+
+.dashboard{
+  height: 100vh;
+}
+
+
+// ------------- Navbar start ---------//
+
+.navbar{
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  padding : 10px 20px;
+  text-transform: capitalize;
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--grey-1);
+  z-index: 1000;
+
+
+  .userInfo {
+
+    display : flex;
+    align-items: center;
+
+    a {
+      font-weight: bold;
+      padding-right: 20px;
+      text-decoration: none;
+      color: var(--white);
+      outline:none
+    }
+
+    img{
+      border-radius:50%;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+    }
+
+  }
+}
+
+// ------------ Navbar end ------------- //
+
+
+// -------------- Dashboard start ------------ //
+
+.trips-container {
+  background-color: var(--grey-2);
+  height: fit-content;
+  top: -20px;
+  padding: 25px;
+  color: var(--grey-3);
+  text-transform:capitalize;
+
+
+
+  .trips-class {
+
+    display : flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.125rem;
+
+
+    .class-list{
+
+      list-style-type: none;
+      
+  
+      .class-item{
+        display: inline-block;
+        padding-right: 15px;
+        
+  
+        a{
+          text-decoration: none;
+          color: var(--grey-3);
+          transition: ease all 0.5s;
+  
+          &:hover{
+            color: var(--white);
+            border-bottom:  1px solid var(--white);
+        }
+        
+        }
+      }
+  
+    }
+
+    .filter{
+      color: var(--grey-3);
+      padding: 0 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: ease all 0.5s;
+      cursor: pointer;
+
+      &:hover{
+        color : var(--white)
+      }
+
+      p{
+        padding-left: 10px;
+        position: relative;
+        top: -2px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .filter__box {
+    position: absolute;
+    right: -1000px;
+    top: 135px;
+    background-color: var(--grey-1);
+    padding: 20px;
+    border-radius: 5px;
+    width: 200px;
+    height: fit-content;
+    visibility: hidden;
+    transition: ease all 0.5s;
+
+    h4{
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 400;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--grey-3);
+    }
+
+    .filter__list{
+      
+      background-color: var(--grey-2);
+      margin-top:10px;
+      padding: 10px 7px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      position:relative;
+       
+        
+        .list{
+         width:100%;
+         height:100%;
+         border: none;
+         outline: none;
+         background-color: var(--grey-2);
+         color: var(--grey-3);
+         font-size: 1.1rem;
+         cursor: pointer;
+         text-transform: capitalize;
+
+
+          .filter__item{
+            margin-top:10px;
+            padding: 10px;
+          
+           
+          }
+        }
+      
+      
+    }
+  }
+
+  .active{
+    visibility: visible;
+    right: 25px;
+    top:135px;
+    z-index: 100;
+    padding: 10x;
+  }
+  
+}
+
+
+// trip component 
+
+.trip{
+
+  background-color: var(--grey-4);
+  margin: 10px 0;
+  padding: 20px;
+  color: var(--grey-3);
+  font-size: 1rem;
+  border-radius: 5px;
+  
+
+  .left-side-trip{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+
+
+    img{
+      width: 200px;
+      height: 120px;
+      border-radius: 5px;
+    }
+  
+    .ride-info {
+      padding-left: 20px;
+      line-height:1.5;
+      
+        span{
+          color: var(--white);
+        }
+    }
+
+  }
+
+
+  
+}
